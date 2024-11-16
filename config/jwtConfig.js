@@ -1,0 +1,1 @@
+// For storing JWT Web Token , secret key and expiration time.

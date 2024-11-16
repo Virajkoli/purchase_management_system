@@ -1,0 +1,77 @@
+<!-- views/dashboard/superadmin.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superadmin Dashboard - Tender Control</title>
+    <link href="/styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Main container -->
+    <div class="flex">
+        
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white min-h-screen">
+            <div class="p-5">
+                <h2 class="text-2xl font-bold text-center text-white">Purchase Control</h2>
+                <p class="text-gray-400 text-center">Superadmin</p>
+            </div>
+            <div class="mt-10">
+                <ul class="space-y-4 px-6">
+                    <li><a href="#" class="text-white hover:bg-gray-700 p-2 rounded-md block">Dashboard</a></li>
+                    <li><a href="/user-list" class="text-white hover:bg-gray-700 p-2 rounded-md block">Manage Admins</a></li>
+                    <li><a href="/manage-documents" class="text-white hover:bg-gray-700 p-2 rounded-md block">Manage Documents</a></li>
+                    <li><a href="/settings" class="text-white hover:bg-gray-700 p-2 rounded-md block">Settings</a></li>
+                    <li><a href="/logout" class="text-white hover:bg-gray-700 p-2 rounded-md block">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="flex-1 p-8">
+            <div class="mb-8">
+                <h1 class="text-3xl font-semibold text-gray-800">Welcome to the Superadmin Dashboard</h1>
+                <p class="mt-2 text-gray-600">Here you can manage admins, documents, and settings for the Purchase Management system.</p>
+            </div>
+
+            <!-- Quick Stats Section -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Total Admins</h3>
+                    <p class="text-2xl font-bold text-gray-600">value</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Total Documents</h3>
+                    <p class="text-2xl font-bold text-gray-600">value</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-800">Pending Requests</h3>
+                    <p class="text-2xl font-bold text-gray-600">value</p>
+                </div>
+            </div>
+
+            <!-- Admin Management Section -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800">Manage Admins</h2>
+                <p class="text-gray-600">You can add, remove, or edit admin users here.</p>
+                <a href="/add-admin" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Add New Admin</a>
+                <a href="/user-list" class="mt-4 ml-4 inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">View All Admins</a>
+            </div>
+
+            <!-- Document Management Section -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800">Manage Documents</h2>
+                <p class="text-gray-600">Upload, view, or remove documents here.</p>
+                <a href="/upload-document" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Upload Document</a>
+                <a href="/view-documents" class="mt-4 ml-4 inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">View All Documents</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
