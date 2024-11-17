@@ -2,10 +2,10 @@
 const jwt = require('jsonwebtoken');
 
 const authenticate = (req, res, next) => {
-    const token = req.cookies.auth_token || req.header('Authorization')?.split(' ')[1];
+    const token = req.cookies.token || req.header('Authorization')?.split(' ')[1];
 
     if (!token) {
-        return res.status(401).json({ message: 'Unauthorized, no token provided' });
+        return res.redirect("/login-superadmin");
     }
 
     try {
