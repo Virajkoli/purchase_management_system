@@ -10,6 +10,9 @@ const createSuperadmin = async () => {
           password: await bcrypt.hash('superadmin@purchase', 10), 
           role: 'Superadmin',
           permissions: ['all'], 
+          password: await bcrypt.hash('superadmin@purchase', 10), // Hashed password
+          role: 'Superadmin',
+          permissions: ['all'], // Full permissions
         });
   
         await superadmin.save();
