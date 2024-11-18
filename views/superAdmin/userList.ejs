@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div class="min-h-screen flex flex-col items-center justify-center py-10">
+
+        <!-- Container -->
+        <div class="w-full max-w-6xl bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Users List</h1>
+            
+            <!-- Users Table -->
+            <table class="min-w-full bg-white table-auto border-collapse">
+                <thead>
+                    <tr>
+                        <th class="py-3 px-6 text-left border-b text-sm font-medium text-gray-700">Name</th>
+                        <th class="py-3 px-6 text-left border-b text-sm font-medium text-gray-700">Email</th>
+                        <th class="py-3 px-6 text-left border-b text-sm font-medium text-gray-700">Role</th>
+                        <th class="py-3 px-6 text-left border-b text-sm font-medium text-gray-700">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(user => { %>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-6 text-sm text-gray-700 border-b"><%= user.name %></td>
+                            <td class="py-3 px-6 text-sm text-gray-700 border-b"><%= user.email %></td>
+                            <td class="py-3 px-6 text-sm text-gray-700 border-b"><%= user.role %></td>
+                            <td class="py-3 px-6 text-sm text-gray-700 border-b">
+                                <a href="/edit-user/<%= user._id %>" class="text-blue-600 hover:text-blue-800">Edit</a> | 
+                                <a href="/delete-user/<%= user._id %>" class="text-red-600 hover:text-red-800">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+            <!-- Add User Button -->
+            <div class="mt-6 text-center">
+                <a href="/add-admin" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Add New User</a>
+            </div>
+
+            <!-- Go Back to Dashboard Button -->
+            <div class="mt-6 text-center">
+                <a href="/dashboards/superadmin" class="bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700">Go Back to Dashboard</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
